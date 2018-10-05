@@ -8,18 +8,13 @@ with open('country-list.csv', 'rb') as f:
 host = "ec2-18-216-96-228.us-east-2.compute.amazonaws.com"
 port = 8000
 
-def get_capital(country):
-    for i in capitals:
-        if(i[0] == country):
-            print i[1]
-            return i[1]
-            
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((host, port))
 
 while True:
     country = s.recv(1024).strip()
+    print country
     country = country[23:-1]
     if(not country):
         print "failed"
@@ -30,6 +25,7 @@ while True:
             s.send(i[1])
 
 
+s.close()
 
 
 """
