@@ -86,3 +86,11 @@ b[0]
 b
 im.size
 %history -f crypto.py
+im.tag
+im.
+im.mode
+image = (im, im.size, im.mode)
+image
+image = (b, im.mode, im.size)
+image
+%history -f crypto.py
